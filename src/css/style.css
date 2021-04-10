@@ -1,20 +1,44 @@
 @font-face{
     font-family: "Nunito";
-    src: "https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+    src: url("fonts/Nunito-SemiBoldItalic.ttf");
 }
 
 @font-face{
     font-family: "Quantico";
-    src: "https://fonts.googleapis.com/css2?family=Quantico&display=swap"
+    src: url("fonts/Quantico-Regular.ttf");
 }
 
 .body {
-    background-color: #1B254E;
+    background-image: linear-gradient(to bottom, #1B254E 25%, #48578E 60%);
     color: white;
     font-family: "Quantico";
+    font-size: 48px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    letter-spacing: 10px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+button {
+    font-family: "Nunito";
+    font-size: 36px;
+    color: #7C7777;
+    background-color: #F3F3F3;
+    border: none;
+    border-radius: 60px;
+    box-shadow: -10px 10px 4px 0 rgba(124, 119, 119, 1);
+    transition: all 0.3 ease 0s;
+    width: 375px;
+    height: 100px;
+    margin: 18px;
+}
+
+button:hover {
+    background-color: #6D86DF;
+    color: #F3F3F3;
+    box-shadow: -10px 10px 4px 0 rgba(109, 134, 223, 0.5);
 }

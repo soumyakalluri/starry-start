@@ -36,8 +36,12 @@ class App extends Component {
   return (
     <div className="App">
       {this.state.isSignedIn ? (
-      <div>
+      <div className="body">
         <h1>start</h1>
+        <button>view diary</button>
+        <button>constellations</button>
+        <button>moon phase</button>
+        <button>space fact</button>
         <button onClick={() => firebase.auth().signOut()}>log out</button>
       </div>
       ) : (
