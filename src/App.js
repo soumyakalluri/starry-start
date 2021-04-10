@@ -1,8 +1,7 @@
-import './App.css';
+import './css/style.css';
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import React, {Component} from 'react';
-import Login from './components/Login';
 
 firebase.initializeApp({
   apiKey: "AIzaSyBD1ZZ-FzcVuz2cqGpxH91OXMtZXLPV-Fw",

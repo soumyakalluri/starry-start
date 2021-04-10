@@ -1,0 +1,20 @@
+@font-face{
+    font-family: "Nunito";
+    src: "https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+}
+
+@font-face{
+    font-family: "Quantico";
+    src: "https://fonts.googleapis.com/css2?family=Quantico&display=swap"
+}
+
+.body {
+    background-color: #1B254E;
+    color: white;
+    font-family: "Quantico";
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
