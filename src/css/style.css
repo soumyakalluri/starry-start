@@ -9,7 +9,7 @@
 }
 
 .body {
-    background-image: linear-gradient(180deg, #1B254E 23.62%, #48578E 61.67%);
+    background-image: url('./bg_image.jpg');
     opacity: 0.9;
     color: white;
     font-family: "Quantico";
@@ -20,8 +20,9 @@
     align-items: center;
     justify-content: center;
     font-style: normal;
-    font-weight: normal;
+    font-weight: normal;  
 }
+
 
 #heading {
     color: white;
@@ -153,3 +154,4 @@ button:hover {
     height: 80%;
     min-height: 65vh;
 }
+
