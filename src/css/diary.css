@@ -8,12 +8,10 @@
     src: url("fonts/Quantico-Regular.ttf");
 }
 
-.body {
-    background-image: linear-gradient(to bottom, #1B254E 25%, #48578E 60%);
+.diary {
     color: white;
     font-family: "Quantico";
     font-size: 48px;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,48 +99,4 @@ button:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
-
-  #moonphase {
-    display: table;    
-    margin:20px auto;
-    text-align: center;    
-    color:black;
-    border: 1px solid black;
-    padding: 5px 30px;
-  }
-
-  #moonphase [shadow]{
-    filter:drop-shadow(0 0 25px rgb(0,50,50));
-    padding:15px 0;
-  }
-
-  .moonframe {
-      width: 80%;
-      height: 80%;
-      min-height: 65vh;
-  }
-
-  .space-modal-content {
-    margin: 50% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    min-height: 30%;
-    background-color: #F3F3F3;
-    box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 60px;
-    text-align: center;
-  }
-  
-  .space-modal-content h3 {
-      font-family: Nunito;
-      font-size: 36px;
-      color: #7C7777;
-  }
-  
-  .space-modal-content p {
-      font-family: Nunito;
-      font-size: 20px;
-      color: black;
   }
