@@ -19,7 +19,7 @@ class App extends Component {
     super(props);
     this.toggleMoonDisplay = this.toggleMoonDisplay.bind(this);
     this.toggleSpaceDisplay = this.toggleSpaceDisplay.bind(this);
-    // this.showSpaceFact = this.showSpaceFact.bind(this);
+    this.toggleConstellationsDisplay = this.toggleConstellationsDisplay.bind(this);
 
     this.state = {
       isSignedIn: false,
@@ -74,6 +74,17 @@ class App extends Component {
     }
   }
 
+  toggleConstellationsDisplay() {
+    let constellationsModal = document.getElementById("constellationsModal");
+    if (this.state.displayConstellations) {
+      this.setState({displayConstellations: false})
+      constellationsModal.style.display = "none";
+    } else {
+      this.setState({displayConstellations: true})
+      constellationsModal.style.display = "block";
+    }
+  }
+
   render() {
     // moon display here
     let moonButton = <button onClick={this.toggleMoonDisplay}>moon phase</button>;
@@ -86,12 +97,22 @@ class App extends Component {
       </div>;
 
     // space display here
-    let spaceButton = <button onClick={this.toggleSpaceDisplay}>cool space fact</button>;
+    let spaceButton = <button onClick={this.toggleSpaceDisplay}>space fact</button>;
     let spaceModal = <div id="spaceModal" className="modal">
         <div className="space-modal-content">
           <span className="close" onClick={this.toggleSpaceDisplay}>&times;</span>
           <h3>Check out this cool space fact!</h3>
           <p id='spacefact'></p>
+        </div>
+      </div>;
+
+    // constellations display here
+    let constellationsButton = <button onClick={this.toggleConstellationsDisplay}>constellations</button>;
+    let constellationsModal = <div id="constellationsModal" className="modal">
+        <div className="modal-content">
+          <span className="close" onClick={this.toggleConstellationsDisplay}>&times;</span>
+          <h3>These are the constellations you can see based on your time and location!</h3>
+          <iframe className="constellationframe" src="https://in-the-sky.org///skymap2.php?skin=1" title="the constellations today"></iframe> 
         </div>
       </div>;
 
@@ -102,7 +123,8 @@ class App extends Component {
         <div className="body">
           <h3>start</h3>
           <button>view diary</button>
-          <button>constellations</button>
+          {constellationsButton}
+          {constellationsModal}
           {moonButton}
           {moonModal}
           {spaceButton}
