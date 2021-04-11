@@ -93,7 +93,7 @@ class App extends Component {
     let moonModal = <div id="moonModal" className="modal">
         <div className="modal-content">
           <span className="close" onClick={this.toggleMoonDisplay}>&times;</span>
-          <h3>This is today's moon phase</h3>
+          <h3>This is today's moon phase!</h3>
           <iframe className="moonframe" src="https://www.moongiant.com/phase/today/" title="the moon today"></iframe> 
         </div>
       </div>;
@@ -125,7 +125,7 @@ class App extends Component {
       <div className="App">
         {this.state.isSignedIn ? (
         <div className="body">
-          <h3>start</h3>
+          <h>start</h>
           <button>view diary</button>
           {constellationsButton}
           {constellationsModal}
@@ -137,7 +137,10 @@ class App extends Component {
         </div>
         ) : (
         <div className="body">
-          <h1>sign in to start</h1>
+          <h1>start</h1>
+          <div className="p">
+          <p>sign in to start</p>
+          </div>
           <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
         </div>
       )}

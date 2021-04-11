@@ -4,16 +4,22 @@
 }
 
 @font-face{
+  font-family: "Tapes";
+  src: url("fonts/Winter\ Calligraphy.ttf");
+}
+
+@font-face{
     font-family: "Quantico";
     src: url("fonts/Quantico-Regular.ttf");
 }
 
 .body {
-    background-image: url('./bg_image.jpg');
+    background-image: url('bg_image.jpg');
     opacity: 0.9;
     color: white;
-    font-family: "Quantico";
-    font-size: 48px;
+    font-family: "Tapes";
+    font-size: 57px;
+    color: #FFe6B6;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -21,6 +27,13 @@
     justify-content: center;
     font-style: normal;
     font-weight: normal;  
+}
+
+.p {
+  color: #F3F3F3;
+  font-family: "Nunito";
+  font-size: 40px;
+  text-decoration: underline;
 }
 
 
@@ -40,8 +53,8 @@ button {
     border-radius: 60px;
     box-shadow: -10px 10px 4px 0 rgba(124, 119, 119, 1);
     transition: all 0.3 ease 0s;
-    width: 375px;
-    height: 100px;
+    width: 364px;
+    height:99px;
     margin: 18px;
 }
 
@@ -67,7 +80,7 @@ button:hover {
   
   /* Modal Content/Box */
   .modal-content {
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 10% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
@@ -126,7 +139,7 @@ button:hover {
   }
 
   .space-modal-content {
-    margin: 50% auto; /* 15% from the top and centered */
+    margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
