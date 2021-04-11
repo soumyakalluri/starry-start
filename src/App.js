@@ -3,6 +3,7 @@ import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import React, {Component} from 'react';
 import facts from './Space_Facts.js';
+import ReactStars from "react-rating-stars-component";
 
 if (!firebase.apps.length) {
   firebase.initializeApp({
@@ -24,7 +25,8 @@ class App extends Component {
     this.state = {
       isSignedIn: false,
       displayMoon: false,
-      displaySpace: false
+      displaySpace: false,
+      displayConstellations: false
     }
   }
 
@@ -112,9 +114,11 @@ class App extends Component {
         <div className="modal-content">
           <span className="close" onClick={this.toggleConstellationsDisplay}>&times;</span>
           <h3>These are the constellations you can see based on your time and location!</h3>
-          <iframe className="constellationframe" src="https://in-the-sky.org///skymap2.php?skin=1" title="the constellations today"></iframe> 
+          <iframe className="constellationframe" src="https://stellarium-web.org/" title="the constellations today"></iframe> 
         </div>
       </div>;
+
+      // star rating 
 
     // rendering items
     return (
