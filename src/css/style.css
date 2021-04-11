@@ -116,11 +116,11 @@ button:hover {
   }
 
   .space-modal-content {
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 50% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
-    min-height: 80%;
+    min-height: 30%;
     background-color: #F3F3F3;
     box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.25);
     border-radius: 60px;

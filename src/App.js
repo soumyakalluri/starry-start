@@ -2,11 +2,12 @@ import './css/style.css';
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import React, {Component} from 'react';
+import facts from './Space_Facts.js';
 
 if (!firebase.apps.length) {
   firebase.initializeApp({
   apiKey: "AIzaSyBD1ZZ-FzcVuz2cqGpxH91OXMtZXLPV-Fw",
-  authDomain: "starry-start.web.app",
+  authDomain: "starry-start.firebaseapp.com",
   databaseURL: "https://starry-start.firebaseio.com"
 });
 } else {
@@ -18,6 +19,7 @@ class App extends Component {
     super(props);
     this.toggleMoonDisplay = this.toggleMoonDisplay.bind(this);
     this.toggleSpaceDisplay = this.toggleSpaceDisplay.bind(this);
+    // this.showSpaceFact = this.showSpaceFact.bind(this);
 
     this.state = {
       isSignedIn: false,
@@ -60,11 +62,14 @@ class App extends Component {
 
   toggleSpaceDisplay() {
     let spaceModal = document.getElementById("spaceModal");
+    let coolfacts = facts.split('\n')
     if (this.state.displaySpace) {
       this.setState({displaySpace: false})
       spaceModal.style.display = "none";
     } else {
       this.setState({displaySpace: true})
+      let number = Math.floor(Math.random() * 100); 
+      document.getElementById("spacefact").innerHTML = coolfacts[number];
       spaceModal.style.display = "block";
     }
   }
@@ -86,17 +91,16 @@ class App extends Component {
         <div className="space-modal-content">
           <span className="close" onClick={this.toggleSpaceDisplay}>&times;</span>
           <h3>Check out this cool space fact!</h3>
-          <p>buzz lightyear woo</p> 
+          <p id='spacefact'></p>
         </div>
       </div>;
-
 
     // rendering items
     return (
       <div className="App">
         {this.state.isSignedIn ? (
         <div className="body">
-          <h1>start</h1>
+          <h3>start</h3>
           <button>view diary</button>
           <button>constellations</button>
           {moonButton}
