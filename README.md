@@ -1,3 +1,12 @@
+# Start App
+Start is a mental health app based on the creators' favorite things to do when they are stressed:
+* Listen to music 
+* Journal
+* Look out the window 
+* Overall, just space out. 
+
+Here is the link to the app if you'd like to check it out: https://starry-start.web.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
