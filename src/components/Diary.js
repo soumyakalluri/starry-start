@@ -42,19 +42,21 @@ class Diary extends Component {
           currDiary = entry.data()[this.state.date];
         }
 
-        console.log(currDiary);
-        currDiary += ' || edit: ' + this.state.value;
-        console.log(currDiary);
-
-        // push updated diary entry
-        let setWithMerge = userRef.set({
-          [this.state.date]: currDiary}, 
-        {merge: true});
-
-        this.setState({newDiary: false, value: ''});
-      } else {
-        console.log("No such entry!");
       }
+
+      console.log(currDiary);
+      if (currDiary != '') {
+        currDiary += ' || edit: ';
+      }
+      currDiary += this.state.value;
+      console.log(currDiary);
+
+      // push updated diary entry
+      let setWithMerge = userRef.set({
+        [this.state.date]: currDiary}, 
+      {merge: true});
+
+      this.setState({newDiary: false, value: ''});
     }).catch((error) => {
       console.log("Error getting document:", error);
     });
