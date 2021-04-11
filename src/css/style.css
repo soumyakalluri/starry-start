@@ -4,6 +4,11 @@
 }
 
 @font-face {
+    font-family: "NunitoReg";
+    src: url("fonts/Nunito-SemiBold.ttf");
+}
+
+@font-face {
   font-family: "Tapes";
   src: url("fonts/Winter\ Calligraphy.ttf");
 }
@@ -47,6 +52,22 @@
     font-family: "Tapes";
     font-size: 64px;
     margin: 0;
+}
+
+.audio {
+    position: fixed;
+    float: left;
+    margin-top: 0;
+    align-items: left;
+    z-index: 1;
+}
+
+.creators {
+    font-family: "NunitoReg";
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    text-shadow: none;
 }
 
 button {

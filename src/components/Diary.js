@@ -29,12 +29,37 @@ class Diary extends Component {
 
     let currentUID = firebase.auth().currentUser.uid;
     let userRef = firebase.firestore().collection('users').doc(currentUID);
+    let currEntries;
+    let currDiary = '';
+    
+    // if diary entry exists for current date, update entry
+    let data = userRef.get().then((entry) => {
+      if (entry.exists) {
+        currEntries = Object.keys(entry.data());
 
-    let setWithMerge = userRef.set({
-      [this.state.date]: this.state.value}, 
-    {merge: true});
+        if (currEntries.includes(this.state.date)) {
+          console.log("current date was found");
+          currDiary = entry.data()[this.state.date];
+        }
 
-    this.setState({newDiary: false, value: ''});
+        console.log(currDiary);
+        currDiary += ' || edit: ' + this.state.value;
+        console.log(currDiary);
+
+        // push updated diary entry
+        let setWithMerge = userRef.set({
+          [this.state.date]: currDiary}, 
+        {merge: true});
+
+        this.setState({newDiary: false, value: ''});
+      } else {
+        console.log("No such entry!");
+      }
+    }).catch((error) => {
+      console.log("Error getting document:", error);
+    });
+    
+
   }
 
   handleChange(event) {
@@ -94,6 +119,7 @@ class Diary extends Component {
         {this.state.viewDiary ? (
           // view past diary entries
           <div>
+            <h>my past entries</h>
             <ul id="diary-entries"></ul>
           </div>
         ) : 
@@ -103,10 +129,13 @@ class Diary extends Component {
               <form onSubmit={this.handleSubmit}>
                 <label>
                   how are you feeling today?
-                  <input type="text" value={this.state.value} onChange={this.handleChange}/>
+                  <br />
+                  <textarea value={this.state.value} onChange={this.handleChange} className="input-text"/>
                 </label>
-                <input type="submit" value="save"/>
-                <input type="button" value="cancel" onClick={this.handleCancel}/>
+                <br />
+                <input type="submit" value="save" className="input-button"/>
+                <br />
+                <input type="button" value="cancel" onClick={this.handleCancel} className="input-button"/>
               </form>
             </div>
             :

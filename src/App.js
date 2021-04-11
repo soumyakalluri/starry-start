@@ -4,6 +4,7 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import React, {Component} from 'react';
 import facts from './Space_Facts.js';
 import Diary from './components/Diary';
+import song from './chillmusic.mp3';
 
 if (!firebase.apps.length) {
   firebase.initializeApp({
@@ -24,13 +25,15 @@ class App extends Component {
     this.toggleDiaryDisplay = this.toggleDiaryDisplay.bind(this);
     // this.showSpaceFact = this.showSpaceFact.bind(this);
     this.toggleConstellationsDisplay = this.toggleConstellationsDisplay.bind(this);
+    this.toggleMute = this.toggleMute.bind(this);
 
     this.state = {
       isSignedIn: false,
       displayDiary: false,
       displayMoon: false,
       displaySpace: false,
-      displayConstellations: false
+      displayConstellations: false,
+      music: true
     }
   }
 
@@ -99,7 +102,19 @@ class App extends Component {
     }
   }
 
+  toggleMute() {
+    if (this.state.music) {
+      this.song.pause();
+      this.setState({music: false});
+    } else {
+      this.song.play();
+      this.setState({music: true});
+    }
+  }
+
   render() {
+    // let musicSrc = this.state.music ? "./images/unmute.png" : "./images/mute.png";
+
     // diary button here
     let diaryButton = <button onClick={this.toggleDiaryDisplay}>view diary</button>;
     let diaryPage = <div className="body">
@@ -140,31 +155,43 @@ class App extends Component {
     // rendering items
     return (
       <div className="App">
+        {/* <img src={require(musicSrc)} onClick={this.toggleMute}/> */}
         {this.state.isSignedIn ? (
           this.state.displayDiary ? (
             diaryPage
           ) : (
-            <div className="body">
-              <h>start</h>
-              {diaryButton}
-              {constellationsButton}
-              {constellationsModal}
-              {moonButton}
-              {moonModal}
-              {spaceButton}
-              {spaceModal}
-              <button onClick={() => firebase.auth().signOut()}>log out</button>
+            <div>
+              <div className="audio">
+                <audio controls>
+                  <source src={song} type="audio/mpeg"/>
+                </audio>
+              </div>
+              <div className="body">
+                <h>start</h>
+                {diaryButton}
+                {constellationsButton}
+                {constellationsModal}
+                {moonButton}
+                {moonModal}
+                {spaceButton}
+                {spaceModal}
+                <button onClick={() => firebase.auth().signOut()}>log out</button>
+              </div>
             </div>
           )
         ) : (
           <div className="body">
           <h1>start</h1>
           <div className="p">
-          <p>sign in to start</p>
+            <p>sign in to start</p>
           </div>
           <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
+
+          <p className="creators">This was created by <a href="https://github.com/srpatel2000">Siddhi Patel</a> and <a href="https://github.com/soumyakalluri">Soumya Kalluri</a> for Women/Hacks 2021!
+          </p>
         </div>
       )}
+
       </div>
     );
 

@@ -24,15 +24,44 @@
     justify-content: center;
     font-style: normal;
     font-weight: normal;
+    text-align: center;
+}
+
+ul {
+    text-align: left;
+    background-color: rgba(156, 156, 156, 0.733);
+    border-radius: 20px;
+    list-style-type: none;
 }
 
 .heading {
     font-family: "Tapes";
     font-size: 64px;
     margin: 0;
+    text-align: center;
 }
 
-button {
+#diary-entries {
+    font-family: "Nunito";
+    font-size: 36px;
+    color: white;
+    text-shadow: none;
+    padding: 10px;
+}
+
+.input-text {
+    width: 100%;
+    height: 125px;
+    margin-top: 20px;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+button, .input-button {
     font-family: "Nunito";
     font-size: 36px;
     color: #7C7777;
@@ -46,7 +75,7 @@ button {
     margin: 18px;
 }
 
-button:hover {
+button:hover, .input-button:hover {
     background-color: #6D86DF;
     color: #F3F3F3;
     box-shadow: -10px 10px 4px 0 rgba(109, 134, 223, 0.5);
