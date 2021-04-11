@@ -1,30 +1,50 @@
-@font-face{
+@font-face {
     font-family: "Nunito";
     src: url("fonts/Nunito-SemiBoldItalic.ttf");
 }
 
-@font-face{
+@font-face {
+  font-family: "Tapes";
+  src: url("fonts/Winter\ Calligraphy.ttf");
+}
+
+@font-face {
     font-family: "Quantico";
     src: url("fonts/Quantico-Regular.ttf");
 }
 
 .body {
-    background-image: linear-gradient(to bottom, #1B254E 25%, #48578E 60%);
-    color: white;
-    font-family: "Quantico";
-    font-size: 48px;
+    background-image: url('bg_image.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 0.9;
+    font-family: "Tapes";
+    text-shadow: 5px 5px 5px black;
+    font-size: 57px;
+    color: #FFe6B6;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-style: normal;
-    font-weight: normal;
+    font-weight: normal;  
 }
+
+.p {
+  color: #F3F3F3;
+  font-family: "Nunito";
+  font-size: 40px;
+  text-decoration: underline;
+  text-shadow: none;
+}
+
 
 .heading {
     color: white;
-    font-family: "Quantico";
+    font-family: "Tapes";
     font-size: 64px;
     margin: 0;
 }
@@ -38,8 +58,8 @@ button {
     border-radius: 60px;
     box-shadow: -10px 10px 4px 0 rgba(124, 119, 119, 1);
     transition: all 0.3 ease 0s;
-    width: 375px;
-    height: 100px;
+    width: 364px;
+    height:99px;
     margin: 18px;
 }
 
@@ -61,11 +81,12 @@ button:hover {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(130, 130, 130, 0.73); /* Black w/ opacity */
-  }
+    text-shadow: none;
+}
   
-  /* Modal Content/Box */
-  .modal-content {
-    margin: 15% auto; /* 15% from the top and centered */
+/* Modal Content/Box */
+.modal-content {
+    margin: 10% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
@@ -74,57 +95,65 @@ button:hover {
     box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.25);
     border-radius: 60px;
     text-align: center;
-  }
+    text-shadow: none;
+}
   
-  .modal-content h3 {
-      font-family: Nunito;
-      font-size: 36px;
-      color: #7C7777;
-  }
+.modal-content h3 {
+    font-family: Nunito;
+    font-size: 36px;
+    color: #7C7777;
+    text-shadow: none;
+}
   
-  .modal-content p {
-      font-family: Nunito;
-      font-size: 20px;
-      color: black;
-  }
+.modal-content p {
+    font-family: Nunito;
+    font-size: 20px;
+    color: black;
+    text-shadow: none;
+}
 
-  /* The Close Button */
-  .close {
+/* The Close Button */
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+    text-shadow: none;
+}
   
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+    text-shadow: none;
+}
 
-  #moonphase {
+#moonphase {
     display: table;    
     margin:20px auto;
     text-align: center;    
     color:black;
     border: 1px solid black;
     padding: 5px 30px;
-  }
+    text-shadow: none;
+}
 
-  #moonphase [shadow]{
+#moonphase [shadow]{
     filter:drop-shadow(0 0 25px rgb(0,50,50));
     padding:15px 0;
-  }
+    text-shadow: none;
+}
 
-  .moonframe {
-      width: 80%;
-      height: 80%;
-      min-height: 65vh;
-  }
+.moonframe {
+    width: 80%;
+    height: 80%;
+    min-height: 65vh;
+    text-shadow: none;
+}
 
-  .space-modal-content {
-    margin: 50% auto; /* 15% from the top and centered */
+.space-modal-content {
+    margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
@@ -133,16 +162,27 @@ button:hover {
     box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.25);
     border-radius: 60px;
     text-align: center;
-  }
+    text-shadow: none;
+}
   
-  .space-modal-content h3 {
-      font-family: Nunito;
-      font-size: 36px;
-      color: #7C7777;
-  }
+.space-modal-content h3 {
+    font-family: Nunito;
+    font-size: 36px;
+    color: #7C7777;
+    text-shadow: none;
+}
   
-  .space-modal-content p {
-      font-family: Nunito;
-      font-size: 20px;
-      color: black;
-  }
+.space-modal-content p {
+    font-family: Nunito;
+    font-size: 20px;
+    color: black;
+    text-shadow: none;
+}
+
+.constellationframe {
+    width: 80%;
+    height: 80%;
+    min-height: 65vh;
+    text-shadow: none;
+}
+

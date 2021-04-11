@@ -23,20 +23,21 @@ class App extends Component {
     this.toggleSpaceDisplay = this.toggleSpaceDisplay.bind(this);
     this.toggleDiaryDisplay = this.toggleDiaryDisplay.bind(this);
     // this.showSpaceFact = this.showSpaceFact.bind(this);
+    this.toggleConstellationsDisplay = this.toggleConstellationsDisplay.bind(this);
 
     this.state = {
       isSignedIn: false,
       displayDiary: false,
       displayMoon: false,
-      displaySpace: false
+      displaySpace: false,
+      displayConstellations: false
     }
   }
 
   uiConfig = {
     signInFlow: "popup",
     signInOptions: [
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      firebase.auth.EmailAuthProvider.PROVIDER_ID
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID
     ],
     callbacks: {
       signInSuccessWithAuthResult: () => false
@@ -87,6 +88,17 @@ class App extends Component {
     }
   }
 
+  toggleConstellationsDisplay() {
+    let constellationsModal = document.getElementById("constellationsModal");
+    if (this.state.displayConstellations) {
+      this.setState({displayConstellations: false})
+      constellationsModal.style.display = "none";
+    } else {
+      this.setState({displayConstellations: true})
+      constellationsModal.style.display = "block";
+    }
+  }
+
   render() {
     // diary button here
     let diaryButton = <button onClick={this.toggleDiaryDisplay}>view diary</button>;
@@ -100,18 +112,28 @@ class App extends Component {
     let moonModal = <div id="moonModal" className="modal">
         <div className="modal-content">
           <span className="close" onClick={this.toggleMoonDisplay}>&times;</span>
-          <h3>This is today's moon phase</h3>
-          <iframe className="moonframe" src="https://in-the-sky.org/links.php" title="the moon today"></iframe> 
+          <h3>This is today's moon phase!</h3>
+          <iframe className="moonframe" src="https://www.moongiant.com/phase/today/" title="the moon today"></iframe> 
         </div>
       </div>;
 
     // space display here
-    let spaceButton = <button onClick={this.toggleSpaceDisplay}>cool space fact</button>;
+    let spaceButton = <button onClick={this.toggleSpaceDisplay}>space fact</button>;
     let spaceModal = <div id="spaceModal" className="modal">
         <div className="space-modal-content">
           <span className="close" onClick={this.toggleSpaceDisplay}>&times;</span>
           <h3>Check out this cool space fact!</h3>
           <p id='spacefact'></p>
+        </div>
+      </div>;
+
+    // constellations display here
+    let constellationsButton = <button onClick={this.toggleConstellationsDisplay}>constellations</button>;
+    let constellationsModal = <div id="constellationsModal" className="modal">
+        <div className="modal-content">
+          <span className="close" onClick={this.toggleConstellationsDisplay}>&times;</span>
+          <h3>These are the constellations you can see based on your time and location!</h3>
+          <iframe className="constellationframe" src="https://stellarium-web.org/" title="the constellations today"></iframe> 
         </div>
       </div>;
 
@@ -123,9 +145,10 @@ class App extends Component {
             diaryPage
           ) : (
             <div className="body">
-              <h3 className="heading">start</h3>
+              <h>start</h>
               {diaryButton}
-              <button>constellations</button>
+              {constellationsButton}
+              {constellationsModal}
               {moonButton}
               {moonModal}
               {spaceButton}
@@ -135,9 +158,12 @@ class App extends Component {
           )
         ) : (
           <div className="body">
-            <h1>sign in to start</h1>
-            <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
+          <h1>start</h1>
+          <div className="p">
+          <p>sign in to start</p>
           </div>
+          <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
+        </div>
       )}
       </div>
     );

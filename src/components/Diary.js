@@ -111,8 +111,8 @@ class Diary extends Component {
             </div>
             :
             // view my diary options
-            <div>
-              <h3 className="heading">my diary</h3>
+            <div className="diary">
+              <h>my diary</h>
               {newEntry}
               {viewDiary}
             </div>

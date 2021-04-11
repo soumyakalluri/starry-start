@@ -4,14 +4,20 @@
 }
 
 @font-face{
+  font-family: "Tapes";
+  src: url("fonts/Winter\ Calligraphy.ttf");
+}
+
+@font-face{
     font-family: "Quantico";
     src: url("fonts/Quantico-Regular.ttf");
 }
 
 .diary {
-    color: white;
-    font-family: "Quantico";
-    font-size: 48px;
+    font-family: "Tapes";
+    text-shadow: 5px 5px 5px black;
+    font-size: 57px;
+    color: #FFe6B6;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,8 +27,7 @@
 }
 
 .heading {
-    color: white;
-    font-family: "Quantico";
+    font-family: "Tapes";
     font-size: 64px;
     margin: 0;
 }
